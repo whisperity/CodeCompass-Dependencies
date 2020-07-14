@@ -2,7 +2,7 @@
 
 source ${TRAVIS_BUILD_DIR}/ubuntu_1804/odb/config.sh
 
-export PATH="${BUILD2}/bin:${PATH}"
+export PATH="${BUILD2_INSTALL}/bin:${PATH}"
 
 mkdir odb-build
 pushd odb-build

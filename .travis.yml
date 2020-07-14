@@ -29,7 +29,6 @@ before_deploy:
 deploy:
   provider: releases    # GitHub releases
   name: $DEPLOY_NAME
-  body: "Automatically generated third-party artefacts built by Travis-CI.\n\nFind the details at ${TRAVIS_BUILD_URL}!"
   token: $GITHUB_TOKEN
   file_glob: true
   file: "$HOME/deploy/*"

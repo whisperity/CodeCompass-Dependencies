@@ -1,0 +1,16 @@
+jobs:
+  include:
+    - name: "Bionic Beaver (18.04), Thrift"
+      dist: bionic
+      addons:
+        apt:
+          update: true
+          packages:
+            - libssl1.0-dev
+            - byacc
+            - flex
+      before_script:
+        - ubuntu_1804/thrift/download.sh
+      script:
+        - ubuntu_1804/thrift/build.sh
+

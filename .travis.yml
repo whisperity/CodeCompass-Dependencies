@@ -13,4 +13,5 @@ before_script:
 
 import:
   - ubuntu_1604/travis.yml
+  - ubuntu_1804/travis.yml
 

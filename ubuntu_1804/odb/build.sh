@@ -40,5 +40,9 @@ fi
 
 bpkg install --all --recursive
 
+find . -name "odb-*" -type d -printf '%P\n' \
+  | sed 's/odb-//' \
+  > "${ODB_VERSION_TXT}"
+
 popd # odb-build
 

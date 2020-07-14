@@ -13,6 +13,8 @@ jobs:
         - ubuntu_1804/thrift/download.sh
       script:
         - ubuntu_1804/thrift/build.sh
+      after_success:
+        - ubuntu_1804/thrift/package.sh
     - name: "Bionic Beaver (18.04), ODB, SQLite"
       dist: bionic
       env:
@@ -27,6 +29,8 @@ jobs:
         - ubuntu_1804/odb/get-build2.sh
       script:
         - ubuntu_1804/odb/build.sh
+      after_success:
+        - ubuntu_1804/odb/package.sh
     - name: "Bionic Beaver (18.04), ODB, PostgreSQL"
       dist: bionic
       env:
@@ -43,4 +47,6 @@ jobs:
         - ubuntu_1804/odb/get-build2.sh
       script:
         - ubuntu_1804/odb/build.sh
+      after_success:
+        - ubuntu_1804/odb/package.sh
 

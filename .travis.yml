@@ -1,0 +1,16 @@
+os: linux
+dist: bionic
+language: cpp
+
+# Enable "Build Config Validation" to support imports.
+# cf. http://docs.travis-ci.com/user/build-config-imports/#opt-in
+version: ~> 1.0
+
+before_script:
+  - which cmake g++
+  - cmake --version
+  - g++ --version
+
+import:
+  - ubuntu_1604/travis.yml
+

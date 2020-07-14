@@ -1,0 +1,16 @@
+jobs:
+  include:
+    - name: "Xenial Xerus (16.04), Thrift"
+      dist: xenial
+      addons:
+        apt:
+          update: true
+          packages:
+            - libssl-dev
+            - byacc
+            - flex
+      before_script:
+        - ubuntu_1604/thrift/download.sh
+      script:
+        - ubuntu_1604/thrift/build.sh
+

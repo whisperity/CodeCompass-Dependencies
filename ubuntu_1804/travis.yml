@@ -13,4 +13,34 @@ jobs:
         - ubuntu_1804/thrift/download.sh
       script:
         - ubuntu_1804/thrift/build.sh
+    - name: "Bionic Beaver (18.04), ODB, SQLite"
+      dist: bionic
+      env:
+        - DATABASE=sqlite
+      addons:
+        apt:
+          update: true
+          packages:
+            - gcc-7-plugin-dev
+            - libsqlite3-dev
+      install:
+        - ubuntu_1804/odb/get-build2.sh
+      script:
+        - ubuntu_1804/odb/build.sh
+    - name: "Bionic Beaver (18.04), ODB, PostgreSQL"
+      dist: bionic
+      env:
+        - DATABASE=pgsql
+      addons:
+        apt:
+          update: true
+          packages:
+            - gcc-7-plugin-dev
+            - libpq-dev
+            # Is the entire server suite needed for just compiling ODB?!
+            #- postgresql-server-dev-10
+      install:
+        - ubuntu_1804/odb/get-build2.sh
+      script:
+        - ubuntu_1804/odb/build.sh
 

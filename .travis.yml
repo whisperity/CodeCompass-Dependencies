@@ -25,9 +25,8 @@ after_success:
 
 deploy:
   provider: releases # GitHub releases
-  api_key: $GITHUB_TOKEN
+  token: $GITHUB_TOKEN
   draft: true
-  skip_cleanup: true
   file_glob: true
   file: "$HOME/deploy/*"
   on:

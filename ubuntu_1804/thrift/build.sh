@@ -1,7 +1,6 @@
 #!/bin/bash
 
-THRIFT_SRC="${HOME}/thrift-src"
-THRIFT_INSTALL="${HOME}/thrift-install"
+source ${TRAVIS_BUILD_DIR}/ubuntu_1804/thrift/config.sh
 
 pushd "${THRIFT_SRC}"
 

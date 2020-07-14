@@ -6,6 +6,7 @@ jobs:
         apt:
           update: true
           packages:
+            - libboost-all-dev
             - libssl-dev
             - byacc
             - flex

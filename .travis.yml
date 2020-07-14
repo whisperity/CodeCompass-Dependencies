@@ -23,12 +23,17 @@ import:
 after_success:
   - mkdir -p "$HOME/deploy"
 
+before_deploy:
+  - export DEPLOY_NAME="[travis-ci] Automated build at $(TZ="Etc/UTC+00" date +"%Y-%m-%d_%H-%M-%S")"
+
 deploy:
-  provider: releases # GitHub releases
+  provider: releases    # GitHub releases
+  name: $DEPLOY_NAME
+  body: "Automatically generated third-party artefacts built by Travis-CI.\n\nFind the details at ${TRAVIS_BUILD_URL}!"
   token: $GITHUB_TOKEN
-  draft: true
   file_glob: true
   file: "$HOME/deploy/*"
   on:
+    repo: whisperity/CodeCompass-Dependencies
     all_branches: true
 

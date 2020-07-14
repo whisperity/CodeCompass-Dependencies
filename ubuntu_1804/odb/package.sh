@@ -6,7 +6,7 @@ pushd "${ODB_INSTALL}/.."
 
 mkdir -p "${DEPLOY_ROOT}"
 
-tar cvfz "${DEPLOY_ROOT}/ub1804_odb-$(cat ${ODB_VERSION_TXT})-${DATABASE}-install.tar.gz" \
+tar cvfz "${DEPLOY_ROOT}/ub1804_odb-${DATABASE}-$(cat ${ODB_VERSION_TXT})-install.tar.gz" \
   "$(basename ${ODB_INSTALL})"
 
 popd # odb-install

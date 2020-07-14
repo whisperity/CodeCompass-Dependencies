@@ -6,6 +6,11 @@ language: cpp
 # cf. http://docs.travis-ci.com/user/build-config-imports/#opt-in
 version: ~> 1.0
 
+branches:
+  except:
+    # Ignore the automatically created releases!
+    - /^untagged/
+
 before_script:
   - which cmake g++
   - cmake --version
@@ -13,4 +18,17 @@ before_script:
 
 import:
   - ubuntu_1604/travis.yml
+
+after_success:
+  - mkdir -p "$HOME/deploy"
+
+deploy:
+  provider: releases # GitHub releases
+  api_key: $GITHUB_TOKEN
+  draft: true
+  skip_cleanup: true
+  file_glob: true
+  file: "$HOME/deploy/*"
+  on:
+    all_branches: true
 

@@ -13,4 +13,6 @@ jobs:
         - ubuntu_1604/thrift/download.sh
       script:
         - ubuntu_1604/thrift/build.sh
+      after_success:
+        - ubuntu_1604/thrift/package.sh
 
